@@ -1,5 +1,5 @@
 import { env } from "./environment";
-const { MongoClient, ServerApiVersion } = require("mongodb");
+import { MongoClient, ServerApiVersion } from 'mongodb'
 
 let taskaDatabaseInstance = null
 

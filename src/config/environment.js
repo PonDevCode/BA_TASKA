@@ -8,4 +8,4 @@ export const env = {
     LOCAL_DEV_APP_PORT: process.env.LOCAL_DEV_APP_PORT,
     AUTHOR: 'Pondevcode'
 }
-console.log(env.MONGODB_URL);
+// console.log(env.MONGODB_URL);

@@ -2,7 +2,7 @@ import Joi from 'joi'
 import { ObjectId, ReturnDocument } from 'mongodb'
 import { GET_DB } from '../config/mongoDB.js'
 import { OBJECT_ID_RULE, OBJECT_ID_RULE_MESSAGE } from '../utils/validators.js'
-
+  
 import { BOARD_TYPES } from '../utils/constants.js'
 import { columnModel } from './columnModel.js'
 import { cardModel } from './cardModel.js'

@@ -5,7 +5,8 @@ import { cardModel } from "../models/cardModel.js"
 
 import ApiError from "../utils/ApiError.js"
 import { slugify } from "../utils/formatter.js"
-import { cloneDeep } from "lodash"
+import lodash from 'lodash'
+const { cloneDeep } = lodash
 const createSeviceNew = async (data) => {
     try {
         const newBoard = {

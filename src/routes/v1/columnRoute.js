@@ -1,5 +1,4 @@
-const express = require('express')
-import { StatusCodes } from 'http-status-codes'
+import express from 'express'
 import { columnControllers } from '../../controllers/columnController.js'
 import { columnValidation } from '../../validations/columnValidation.js'
 

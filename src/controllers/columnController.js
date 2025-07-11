@@ -1,4 +1,5 @@
-const express = require('express')
+import express from 'express'
+
 import { StatusCodes } from 'http-status-codes'
 import { columnService } from '../services/columnService.js'
 

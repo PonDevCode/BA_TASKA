@@ -1,4 +1,5 @@
-const express = require('express')
+import express from 'express'
+
 import { StatusCodes } from 'http-status-codes'
 import { boardControllers } from '../../controllers/boardController.js'
 import { boardValidation } from '../../validations/boardValidation.js'

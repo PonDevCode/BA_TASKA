@@ -1,4 +1,5 @@
-const express = require('express')
+import express from 'express'
+
 import { cardControllers } from '../../controllers/cardController.js'
 import { cardValidation } from '../../validations/cardValidation.js'
 const Router = express.Router()

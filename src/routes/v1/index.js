@@ -1,4 +1,4 @@
-const express = require('express')
+import express from 'express'
 const Router = express.Router()
 import { StatusCodes } from 'http-status-codes'
 import { boardRouters } from './boardRoute.js'

@@ -1,6 +1,6 @@
 
 export const WHITELIST_DOMAINS = [
-    'https://taska-mauve.vercel.app/'
+    'https://taska-mauve.vercel.app'
 ]
 
 export const BOARD_TYPES = {

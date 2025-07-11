@@ -2,10 +2,10 @@ import express from 'express'
 import exitHook from 'async-exit-hook'
 import { CONNECT_DB, GET_DB, CLOSE_DB } from '../src/config/mongoDB.js'
 import { env } from './config/environment.js'
-import { APIs_V1 } from './routes/v1'
-import { errorHandlingMiddleware } from './middlewares/errorHandlingMiddleware'
+import { APIs_V1 } from './routes/v1.js'
+import { errorHandlingMiddleware } from './middlewares/errorHandlingMiddleware.js'
 import cors from 'cors'
-import { corsOptions } from '~/config/cors'
+import { corsOptions } from '~/config/cors.js'
 
 const START_SERVER = () => {
   const app = express()

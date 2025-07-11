@@ -20,10 +20,11 @@ const START_SERVER = () => {
   app.get('/', async (req, res) => {
     res.end('<h1>Pon Dev Code</h1>')
   })
-
+  console.log('📦 ENV:', env)
+  console.log('📦 PORT:', process.env.PORT)
   // môi trường production
   if (env.BUILD_MODE === 'production') {
-    app.listen( process.env.PORT, () => {
+    app.listen(process.env.PORT, () => {
       console.log(`3.Production : hi ${env.AUTHOR}, Back end is runing successfully at Port : ${process.env.PORT}`)
     })
   } else {

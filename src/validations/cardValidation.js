@@ -1,6 +1,6 @@
 import Joi from "joi";
 import { StatusCodes } from 'http-status-codes'
-import ApiError from '~/utils/ApiError'
+import ApiError from '../utils/ApiError'
 
 
 const createCardNew = async (req, res, next) => {

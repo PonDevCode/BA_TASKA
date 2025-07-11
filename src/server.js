@@ -6,13 +6,14 @@ import { APIs_V1 } from './routes/v1'
 import { errorHandlingMiddleware } from './middlewares/errorHandlingMiddleware'
 import cors from 'cors'
 import { corsOptions } from '~/config/cors'
+
 const START_SERVER = () => {
   const app = express()
   //Enable req.body json data
   app.use(express.json())
   // xử lý cors
   app.use(cors(corsOptions))
-  
+
   app.use('/v1', APIs_V1)
 
   app.use(errorHandlingMiddleware);
@@ -20,9 +21,20 @@ const START_SERVER = () => {
     res.end('<h1>Pon Dev Code</h1>')
   })
 
-  app.listen(env.APP_PORT, env.APP_HOST, () => {
-    console.log(`3.Hi ${env.AUTHOR}, Back end is runing successfully at host: http://${env.APP_HOST}:${env.APP_PORT}/`)
-  })
+  // môi trường production
+  if (env.BUILD_MODE === 'production') {
+    app.listen( process.env.PORT, () => {
+      console.log(`3.Production : hi ${env.AUTHOR}, Back end is runing successfully at Port : ${process.env.PORT}`)
+    })
+  } else {
+
+    // đây là môi trường local dev
+    app.listen(env.LOCAL_DEV_APP_PORT, env.LOCAL_DEV_APP_HOST, () => {
+      console.log(`3.Local Dev : Hi ${env.AUTHOR}, Back end is runing successfully at host: http://${env.LOCAL_DEV_APP_HOST}:${env.LOCAL_DEV_APP_PORT}/`)
+    })
+  }
+
+
   exitHook(() => {
     console.log('4. Disconnecting form MongoDB Cloud Atlas');
     CLOSE_DB();
@@ -30,6 +42,8 @@ const START_SERVER = () => {
   });
 
 }
+
+
 
 (async () => {
   try {

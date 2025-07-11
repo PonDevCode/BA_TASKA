@@ -1,4 +1,4 @@
-import { env } from "./environment";
+import { env } from "./environment.js";
 import { MongoClient, ServerApiVersion } from 'mongodb'
 
 let taskaDatabaseInstance = null

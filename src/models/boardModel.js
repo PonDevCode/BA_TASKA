@@ -1,4 +1,4 @@
-import Joi, { types } from 'joi'
+import Joi from 'joi'
 import { ObjectId, ReturnDocument } from 'mongodb'
 import { GET_DB } from '../config/mongoDB.js'
 import { OBJECT_ID_RULE, OBJECT_ID_RULE_MESSAGE } from '../utils/validators.js'

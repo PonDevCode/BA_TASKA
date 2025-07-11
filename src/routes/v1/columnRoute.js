@@ -1,7 +1,7 @@
 const express = require('express')
 import { StatusCodes } from 'http-status-codes'
-import { columnControllers } from '../../controllers/columnController'
-import { columnValidation } from '../../validations/columnValidation'
+import { columnControllers } from '../../controllers/columnController.js'
+import { columnValidation } from '../../validations/columnValidation.js'
 
 const Router = express.Router()
 Router.route('/')

@@ -1,6 +1,6 @@
 const express = require('express')
-import { cardControllers } from '../../controllers/cardController'
-import { cardValidation } from '../../validations/cardValidation'
+import { cardControllers } from '../../controllers/cardController.js'
+import { cardValidation } from '../../validations/cardValidation.js'
 const Router = express.Router()
 
 Router.route('/')

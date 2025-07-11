@@ -1,7 +1,7 @@
 import express from 'express'
 import exitHook from 'async-exit-hook'
 import { CONNECT_DB, GET_DB, CLOSE_DB } from '../src/config/mongoDB.js'
-import { env } from './config/environment'
+import { env } from './config/environment.js'
 import { APIs_V1 } from './routes/v1'
 import { errorHandlingMiddleware } from './middlewares/errorHandlingMiddleware'
 import cors from 'cors'

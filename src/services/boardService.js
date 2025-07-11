@@ -1,7 +1,7 @@
 import { StatusCodes } from "http-status-codes"
-import { boardModel } from "../models/boardModel"
-import { columnModel } from "../models/columnModel"
-import { cardModel } from "../models/cardModel"
+import { boardModel } from "../models/boardModel.js"
+import { columnModel } from "../models/columnModel.js"
+import { cardModel } from "../models/cardModel.js"
 
 import ApiError from "../utils/ApiError.js"
 import { slugify } from "../utils/formatter.js"

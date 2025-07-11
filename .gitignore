@@ -1,0 +1,35 @@
+# Node modules
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# dotenv files
+.env
+.README.md
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Optional: Nếu dùng Babel
+*.babelrc
+
+# Optional: Nếu dùng Docker
+docker-compose.override.yml
+
+# Optional: Nếu có coverage test
+coverage/
+
+# Optional: If using TypeScript
+*.tsbuildinfo

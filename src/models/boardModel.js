@@ -1,10 +1,11 @@
 import Joi, { types } from 'joi'
 import { ObjectId, ReturnDocument } from 'mongodb'
-import { GET_DB } from '~/config/mongoDB'
-import { OBJECT_ID_RULE, OBJECT_ID_RULE_MESSAGE } from '~/utils/validators'
-import { BOARD_TYPES } from '~/utils/constants'
-import { columnModel } from './columnModel'
-import { cardModel } from './cardModel'
+import { GET_DB } from '../config/mongoDB.js'
+import { OBJECT_ID_RULE, OBJECT_ID_RULE_MESSAGE } from '../utils/validators.js'
+
+import { BOARD_TYPES } from '../utils/constants.js'
+import { columnModel } from './columnModel.js'
+import { cardModel } from './cardModel.js'
 // Define Collection (name & schema)
 const BOARD_COLLECTION_NAME = 'boards'
 const BOARD_COLLECTION_SCHEMA = Joi.object({

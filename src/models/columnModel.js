@@ -1,6 +1,6 @@
 import Joi from 'joi'
-import { GET_DB } from '~/config/mongoDB'
-import { OBJECT_ID_RULE, OBJECT_ID_RULE_MESSAGE } from '~/utils/validators'
+import { GET_DB } from '../config/mongoDB.js'
+import { OBJECT_ID_RULE, OBJECT_ID_RULE_MESSAGE } from '../utils/validators.js'
 import { ObjectId } from 'mongodb'
 // Define Collection (name & schema)
 const COLUMN_COLLECTION_NAME = 'columns'

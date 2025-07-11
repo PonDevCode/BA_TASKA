@@ -1,6 +1,6 @@
 const express = require('express')
 import { StatusCodes } from 'http-status-codes'
-import { cardService } from '~/services/cardService'
+import { cardService } from '../services/cardService.js'
 
 const createController = async(req, res, next) => {
     try {

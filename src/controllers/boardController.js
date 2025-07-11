@@ -1,6 +1,6 @@
 const express = require('express')
 import { StatusCodes } from 'http-status-codes'
-import { boardService } from '~/services/boardService'
+import { boardService } from '../services/boardService.js'
 
 const createController = async(req, res, next) => {
     try {

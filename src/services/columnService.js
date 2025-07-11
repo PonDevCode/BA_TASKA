@@ -1,9 +1,8 @@
 import { StatusCodes } from "http-status-codes"
-import ApiError from "~/utils/ApiError"
-import { cloneDeep } from "lodash"
-import { columnModel } from "~/models/columnModel"
-import { boardModel } from "~/models/boardModel"
-import { cardModel } from "~/models/cardModel"
+import ApiError from "../utils/ApiError.js"
+import { columnModel } from "../models/columnModel.js"
+import { boardModel } from "../models/boardModel.js"
+import { cardModel } from "../models/cardModel.js"
 const createSeviceNew = async (data) => {
     try {
         const newColumn = {

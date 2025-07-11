@@ -1,6 +1,6 @@
 const express = require('express')
 import { StatusCodes } from 'http-status-codes'
-import { columnService } from '~/services/columnService'
+import { columnService } from '../services/columnService.js'
 
 const createController = async (req, res, next) => {
     try {

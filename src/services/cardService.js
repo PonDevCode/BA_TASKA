@@ -1,5 +1,5 @@
-import { cardModel } from "~/models/cardModel"
-import { columnModel } from "~/models/columnModel"
+import { cardModel } from "../models/cardModel.js"
+import { columnModel } from "../models/columnModel.js"
 const createSeviceNew = async (data) => {
     try {
         const newCard = {

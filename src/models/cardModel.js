@@ -1,7 +1,7 @@
 import Joi, { object } from 'joi'
-import { OBJECT_ID_RULE, OBJECT_ID_RULE_MESSAGE } from '~/utils/validators'
+import { OBJECT_ID_RULE, OBJECT_ID_RULE_MESSAGE } from '../utils/validators.js'
 import { ObjectId } from 'mongodb'
-import { GET_DB } from '~/config/mongoDB'
+import { GET_DB } from '../config/mongoDB.js'
 // Define Collection (name & schema)
 const CARD_COLLECTION_NAME = 'cards'
 const CARD_COLLECTION_SCHEMA = Joi.object({

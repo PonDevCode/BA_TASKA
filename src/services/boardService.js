@@ -1,10 +1,10 @@
 import { StatusCodes } from "http-status-codes"
-import { boardModel } from "~/models/boardModel"
-import { columnModel } from "~/models/columnModel"
-import { cardModel } from "~/models/cardModel"
+import { boardModel } from "../models/boardModel"
+import { columnModel } from "../models/columnModel"
+import { cardModel } from "../models/cardModel"
 
-import ApiError from "~/utils/ApiError"
-import { slugify } from "~/utils/formatter"
+import ApiError from "../utils/ApiError.js"
+import { slugify } from "../utils/formatter.js"
 import { cloneDeep } from "lodash"
 const createSeviceNew = async (data) => {
     try {

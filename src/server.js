@@ -10,7 +10,7 @@ import { corsOptions } from './config/cors.js'
 
 
 // Cấu Hình Socket.io server
-const http = require('http');
+import http from 'http'
 // import socketIo from 'socket.io'
 
 import cookieParser from 'cookie-parser'

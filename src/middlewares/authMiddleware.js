@@ -1,7 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 import { JwtProvider } from "../providers/JwtProvider.js";
 import { env } from "../config/environment.js";
-import ApiError from "../utils/ApiError";
+import ApiError from "../utils/ApiError.js";
 
 
 

@@ -1,5 +1,5 @@
 import multer from "multer";
-import { ALLOW_COMMON_FILE_TYPES ,LIMIT_COMMON_FILE_SIZE} from "../utils/validators";
+import { ALLOW_COMMON_FILE_TYPES ,LIMIT_COMMON_FILE_SIZE} from "../utils/validators.js";
 
 
 const customFileFilter = (req, file, callback) => {

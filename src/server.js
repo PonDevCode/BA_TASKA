@@ -57,7 +57,7 @@ const START_SERVER = () => {
   // môi trường production
   if (env.BUILD_MODE === 'production') {
     // dùng server.listen thây vì app.listen vì lúc này đã bao gôm express app và đã config socket.io
-    server.listen(process.env.PORT, () => {
+    server.listen(env.PORT, () => {
       console.log(`3.Production : hi ${env.AUTHOR}, Back end is runing successfully at Port : ${process.env.PORT}`)
     })
   } else {

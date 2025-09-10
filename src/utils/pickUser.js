@@ -1,4 +1,4 @@
-import { pick } from "lodash"
+import _ from "lodash"
 
 export const pickUser = (user) => {
   if (!user) return null
@@ -14,5 +14,5 @@ export const pickUser = (user) => {
   //   updatedAt: user.updatedAt,
   //   // thêm các field khác nếu cần
   // }
-  return pick(user , ['_id','email','username','displayName','avatar', 'role','isActive','createdAt','updatedAt'])
+  return _.pick(user , ['_id','email','username','displayName','avatar', 'role','isActive','createdAt','updatedAt'])
 }

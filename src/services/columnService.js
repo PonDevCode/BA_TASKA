@@ -34,7 +34,6 @@ const update = async (id, data) => {
 const deleteItem = async (id) => {
     try {
         const targetColumn = await columnModel.findOneById(id)
-        console.log("🚀 ~ deleteItem ~ targetColumn:", targetColumn)
         if (!targetColumn) {
             throw new ApiError(StatusCodes.NOT_FOUND, 'Board Not Found')
         }
@@ -49,32 +48,10 @@ const deleteItem = async (id) => {
         return { deleteResult: 'Column and its Cards deleted successfully!' }
     } catch (error) { throw error }
 }
-// const getDetail = async (id) => {
-//     try {
-//         const board = await boardModel.getDetail(id)
-//         if (!board) {
-//             throw new ApiError(StatusCodes.NOT_FOUND, 'Board Not Found')
-//         }
-//         // cooking data
-//         // b1 clone lại Board
-//         const cloneBoard = cloneDeep(board)
-//         // b2 đẩy card về đúng column của nó 
-//         cloneBoard.columns.forEach(column => {
-//             // equals hàm của mongodb hỗ trợ
-//             column.cards = cloneBoard.cards.filter(card => card.columnId.equals(column._id))
 
-//             // toString hàm của js
-//             // tìm ra cái card có cái columnsId === column._id => gán nó vào mãng card mới của columns
-//             // column.cards = cloneBoard.cards.filter(card => card.columnId?.toString() === column._id?.toString())
-//         })
-//         // b3 xóa Collection cards ko để nó song song với columns
-//         delete cloneBoard.cards
-//         return cloneBoard
-//     } catch (error) { throw error }
-// }
 export const columnService = {
     createSeviceNew,
     update,
     deleteItem
-    // getDetail
+
 }

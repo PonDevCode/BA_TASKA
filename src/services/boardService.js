@@ -6,21 +6,25 @@ import { cardModel } from "../models/cardModel.js"
 import ApiError from "../utils/ApiError.js"
 import { slugify } from "../utils/formatter.js"
 import lodash from 'lodash'
+import { DEFAULT_PAGE , DEFAULT_ITEMS_PER_PAGE } from "../utils/constants.js"
 const { cloneDeep } = lodash
-const createSeviceNew = async (data) => {
+
+
+
+
+const getBoards = async (userId, page , itemsPerPage) => {
     try {
-        const newBoard = {
-            ...data,
-            slug: slugify(data.title)
-        }
-        const result = await boardModel.createModelBoard(newBoard)
-        const getSeviceBoard = await boardModel.findOneById(result.insertedId.toString())
-        return getSeviceBoard
-    } catch (error) { throw error }
+        if(!page) page = DEFAULT_PAGE
+        if(!itemsPerPage) itemsPerPage = DEFAULT_ITEMS_PER_PAGE
+        
+        const result = await boardModel.getBoards(userId, parseInt(page, 10) , parseInt(itemsPerPage, 10))
+
+        return result
+    } catch (error) { next(error)}
 }
-const getDetail = async (id) => {
+const getDetail = async (userId,boardId) => {
     try {
-        const board = await boardModel.getDetail(id)
+        const board = await boardModel.getDetail(userId,boardId)
         if (!board) {
             throw new ApiError(StatusCodes.NOT_FOUND, 'Board Not Found')
         }
@@ -41,7 +45,18 @@ const getDetail = async (id) => {
         return cloneBoard
     } catch (error) { throw error }
 }
+const createSeviceNew = async (userId,data) => {
+    try {
 
+        const newBoard = {
+            ...data,
+            slug: slugify(data.title)
+        }
+        const result = await boardModel.createModelBoard(userId,newBoard)
+        const getSeviceBoard = await boardModel.findOneById(result.insertedId.toString())
+        return getSeviceBoard
+    } catch (error) { throw error }
+}
 const update = async (id, data) => {
     try {
         const updateData = {
@@ -56,7 +71,6 @@ const update = async (id, data) => {
         return result
     } catch (error) { throw error }
 }
-
 const moveCardToDiffentColumn = async (data) => {
     try {
 
@@ -82,5 +96,6 @@ export const boardService = {
     createSeviceNew,
     getDetail,
     update,
-    moveCardToDiffentColumn
+    moveCardToDiffentColumn,
+    getBoards
 }

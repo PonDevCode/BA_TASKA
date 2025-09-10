@@ -1,14 +1,14 @@
 import express from 'express'
 import { columnControllers } from '../../controllers/columnController.js'
 import { columnValidation } from '../../validations/columnValidation.js'
+import { authMiddleware } from '../../middlewares/authMiddleware.js'
 
 const Router = express.Router()
 Router.route('/')
-    .post(columnValidation.createColumnNew, columnControllers.createController)
-
+    .post(authMiddleware.isAuthorized,columnValidation.createColumnNew, columnControllers.createController)
 Router.route('/:id')
-    .put(columnValidation.update, columnControllers.update)
-    .delete(columnValidation.deleteItem, columnControllers.deleteItem)
+    .put(authMiddleware.isAuthorized,columnValidation.update, columnControllers.update)
+    .delete(authMiddleware.isAuthorized,columnValidation.deleteItem, columnControllers.deleteItem)
 
 
 

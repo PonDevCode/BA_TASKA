@@ -4,7 +4,7 @@
 
                         Cấu trúc code
 
-Browser  <==>   Server <==> router <==> 1.Middlewares <===> Controller <==> service <==> Models <==> DTB
+Browser  <==>  Server <==> router <==> 1.Middlewares <===> Controller <==> service <==> Models <==> DTB
 API call           ||                     2.Validation
                    ||
 
@@ -24,3 +24,6 @@ API call           ||                     2.Validation
         res.status(500).send('Something broke!')
         })
   -->
+
+
+

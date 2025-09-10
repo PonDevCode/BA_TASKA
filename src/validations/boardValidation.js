@@ -16,7 +16,7 @@ const createNew = async (req, res, next) => {
         await correctCondition.validateAsync(req.body, { abortEarly: false })
         next()
     } catch (error) {
-        next(new ApiError(StatusCodes.UNPROCESSABLE_ENTITY), new Error(error).message)
+        next(new ApiError(StatusCodes.UNPROCESSABLE_ENTITY,new Error(error).message))
     }
 }
 const update = async (req, res, next) => {
@@ -33,7 +33,7 @@ const update = async (req, res, next) => {
         })
         next()
     } catch (error) {
-        next(new ApiError(StatusCodes.UNPROCESSABLE_ENTITY), new Error(error).message)
+        next(new ApiError(StatusCodes.UNPROCESSABLE_ENTITY, new Error(error).message))
     }
 }
 
@@ -55,7 +55,7 @@ const moveCardToDiffentColumn = async (req, res, next) => {
         await correctCondition.validateAsync(req.body, { abortEarly: false, })
         next()
     } catch (error) {
-        next(new ApiError(StatusCodes.UNPROCESSABLE_ENTITY), new Error(error).message)
+        next(new ApiError(StatusCodes.UNPROCESSABLE_ENTITY, new Error(error).message))
     }
 }
 

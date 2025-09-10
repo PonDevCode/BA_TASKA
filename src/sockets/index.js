@@ -1,8 +1,8 @@
     // Cấu Hình Socket.io server
 
     import socketIo from 'socket.io'
-    import { corsOptions } from '../config/cors';
-    import { InviteUserSocket } from './InviteUserSocket';
+    import { corsOptions } from '../config/cors.js';
+    import { InviteUserSocket } from './InviteUserSocket.js';
 
     export const socketCustom = (server) => {
         const io = socketIo(server, { cors: corsOptions })

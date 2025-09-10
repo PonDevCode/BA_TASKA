@@ -107,10 +107,11 @@ const login = async (data) => {
             env.ACCESS_TOKEN_SECRET_SIGNATURE,
             env.ACCESS_TOKEN_LIFE
         )
-
+        console.log("🚀 ~ login ~ env.REFRESH_TOKEN_SECRET_SIGNATURE:", env.REFRESH_TOKEN_SECRET_SIGNATURE)
         const refreshToken = await JwtProvider.generateToken(
             userInfo,
             env.REFRESH_TOKEN_SECRET_SIGNATURE,
+
             env.REFRESH_TOKEN_LIFE
         )
 
@@ -140,8 +141,8 @@ const refreshToken = async (clientRefreshToken) => {
     } catch (error) { throw error }
 }
 
-const update = async (id, data,userAvatarFile) => {
-   
+const update = async (id, data, userAvatarFile) => {
+
     try {
         // query user và kiểm tra 
         const existUser = await userModel.findOneById(id)
@@ -161,15 +162,15 @@ const update = async (id, data,userAvatarFile) => {
             updatedUser = await userModel.update(existUser._id, {
                 password: await bcrypt.hash(data.new_password, 8),
             })
-        }else if (userAvatarFile) {
+        } else if (userAvatarFile) {
             // trường hợp upload file lên cloud storage , cụ thể là cloudinary
-    
-            const uploadResult = await CloudinaryProvider.streamUpload(userAvatarFile.buffer,'users')
-    
+
+            const uploadResult = await CloudinaryProvider.streamUpload(userAvatarFile.buffer, 'users')
+
 
             // lưu url vào dtb
             updatedUser = await userModel.update(existUser._id, {
-                avatar : uploadResult.secure_url
+                avatar: uploadResult.secure_url
             })
 
         } else {
@@ -209,7 +210,7 @@ export const userService = {
     createSeviceUser,
     verifyAccount,
     login,
-    refreshToken, 
+    refreshToken,
     update
     // getDetail
 }

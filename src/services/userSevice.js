@@ -1,15 +1,15 @@
 import { StatusCodes } from "http-status-codes";
-import ApiError from "../utils/ApiError";
-import { userModel } from "../models/userModel";
+import ApiError from "../utils/ApiError.js";
+import { userModel } from "../models/userModel.js";
 import bcrypt from 'bcrypt'
 import { env } from '../config/environment.js'
-import { JwtProvider } from "../providers/JwtProvider";
+import { JwtProvider } from "../providers/JwtProvider.js";
 import { v4 as uuidv4 } from 'uuid';
-import { WEBSITE_DOMAIN } from "../utils/constants";
+import { WEBSITE_DOMAIN } from "../utils/constants.js";
 
-import { ResendProvider } from "../providers/ResendProvider";
-import { pickUser } from "../utils/pickUser";
-import { CloudinaryProvider } from "../providers/CloundinaryProvider";
+import { ResendProvider } from "../providers/ResendProvider.js";
+import { pickUser } from "../utils/pickUser.js";
+import { CloudinaryProvider } from "../providers/CloundinaryProvider.js";
 
 const createSeviceUser = async (data) => {
     try {

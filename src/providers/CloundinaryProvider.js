@@ -1,4 +1,4 @@
-import { env } from '../config/environment'
+import { env } from '../config/environment.js'
 import cloudinary from 'cloudinary'
 import streamifier from 'streamifier'
 

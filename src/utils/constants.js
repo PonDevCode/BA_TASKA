@@ -1,5 +1,5 @@
     import { constant } from "lodash"
-    import { env } from "../../src/config/environment"
+    import { env } from "../../src/config/environment.js"
     export const WHITELIST_DOMAINS = [
         'https://taska-mauve.vercel.app'
     ]

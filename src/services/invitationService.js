@@ -1,10 +1,10 @@
 import { StatusCodes } from "http-status-codes"
-import { boardModel } from "../models/boardModel"
-import { userModel } from "../models/userModel"
-import ApiError from "../utils/ApiError"
-import { pickUser } from "../utils/pickUser"
+import { boardModel } from "../models/boardModel.js"
+import { userModel } from "../models/userModel.js"
+import ApiError from "../utils/ApiError.js"
+import { pickUser } from "../utils/pickUser.js"
 import { BOARD_INVITATION_STATUS, INVITATION_TYPES } from '../utils/constants.js'
-import { invitationModel } from "../models/invitationModel"
+import { invitationModel } from "../models/invitationModel.js"
 const createNewBoardInvitation = async (reqBody, inviterId) => {
     try {
         // người đi mời : chính là người dang request , nên chúng ta tìm theo id cứ lấy từ token

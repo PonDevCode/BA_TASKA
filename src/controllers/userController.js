@@ -1,7 +1,7 @@
 import express from 'express'
 
 import { StatusCodes } from 'http-status-codes'
-import { userService } from '../services/userSevice'
+import { userService } from '../services/userSevice.js'
 import ms from 'ms'
 import ApiError from '../utils/ApiError.js'
 

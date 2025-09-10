@@ -1,7 +1,7 @@
 import express from 'express'
 
 import { StatusCodes } from 'http-status-codes'
-import { invitationService } from '../services/invitationService'
+import { invitationService } from '../services/invitationService.js'
 
 
 const createNewBoardInvitation = async (req, res, next) => {

@@ -2,7 +2,6 @@
   "name": "server",
   "version": "1.0.0",
   "main": "src/server.js",
-   "type": "module",
   "scripts": {
     "lint": "eslint src --ext js --report-unused-disable-directives --max-warnings 0",
     "clean": "rimraf build && mkdir build",

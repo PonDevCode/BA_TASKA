@@ -7,11 +7,12 @@ import ApiError from '../utils/ApiError.js'
 export const corsOptions = {
   origin: function (origin, callback) {
     // nếu môi trường là local dev thì cho qua luôn
-    if (env.BUILD_MODE === 'dev') {
+    if (env.BUILD_MODE === 'dev' || origin === undefined) {
       return callback(null, true)
     }
     // Kiểm tra dem origin có phải là domain được chấp nhận hay không
-    if ( !origin || WHITELIST_DOMAINS.includes(origin)) {
+    console.log("🚀 ~ origin:", origin)
+    if ( WHITELIST_DOMAINS.includes(origin)) {
       return callback(null, true)
     }
     // Cuối cùng nếu domain không được chấp nhận thì trả về lỗi

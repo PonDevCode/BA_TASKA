@@ -1,25 +1,25 @@
-    
-    import { env } from "../../src/config/environment.js"
-    export const WHITELIST_DOMAINS = [
-        'https://taska-mauve.vercel.app'
-    ]
 
-    export const BOARD_TYPES = {
-        PUBLIC: 'public',
-        PRIVATE: 'private'
-    }
+import { env } from "../../src/config/environment.js"
+export const WHITELIST_DOMAINS = [
+    'https://taska-mauve.vercel.app'
+]
 
-    export const WEBSITE_DOMAIN = (env.BUILD_MODE === 'production') ? env.WEBSITE_DOMAIN_PRODUCTION : env.WEBSITE_DOMAIN_DEVELOPMENT 
+export const BOARD_TYPES = {
+    PUBLIC: 'public',
+    PRIVATE: 'private'
+}
 
-    export const DEFAULT_PAGE = 1
-    export const DEFAULT_ITEMS_PER_PAGE = 12
+export const WEBSITE_DOMAIN = (env.BUILD_MODE === 'production') ? env.WEBSITE_DOMAIN_PRODUCTION : env.WEBSITE_DOMAIN_DEVELOPMENT
 
-    export const INVITATION_TYPES = {
-        BOARD_INVITATION: 'BOARD_INVITATION'
-    }
+export const DEFAULT_PAGE = 1
+export const DEFAULT_ITEMS_PER_PAGE = 12
 
-    export const BOARD_INVITATION_STATUS = {
-        PENDING: 'PENDING',
-        ACCEPTED: 'ACCEPTED',
-        REJECTED: 'REJECTED'
-    }
+export const INVITATION_TYPES = {
+    BOARD_INVITATION: 'BOARD_INVITATION'
+}
+
+export const BOARD_INVITATION_STATUS = {
+    PENDING: 'PENDING',
+    ACCEPTED: 'ACCEPTED',
+    REJECTED: 'REJECTED'
+}

@@ -12,7 +12,7 @@ export const corsOptions = {
     }
     // Kiểm tra dem origin có phải là domain được chấp nhận hay không
     console.log("🚀 ~ origin:", origin)
-    if ( WHITELIST_DOMAINS.includes(origin)) {
+    if ( WHITELIST_DOMAINS.includes(origin) || origin === undefined) {
       return callback(null, true)
     }
     // Cuối cùng nếu domain không được chấp nhận thì trả về lỗi
